@@ -2,7 +2,7 @@
 import React from "react";
 import "./books.css";
 // import useBooks from "@/app/api/all_books";
-import {useGetBooksQuery} from "../../api/api";
+import {useGetBooksQuery} from "../../_api/api";
 
 const AllBooks = () => {
 	// const {books, loading, error} = useBooks();

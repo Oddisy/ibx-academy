@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "./books.css";
-import useBooks from "@/app/api/all_books";
+import useBooks from "@/app/_api/all_books";
 
 const AllBooks = () => {
 	const {books, loading, error} = useBooks();
