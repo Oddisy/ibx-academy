@@ -7,6 +7,7 @@ import Footer from "./components/footer/footer";
 // redux
 import counterReducer from "./redux/slices/counter_slice";
 import MyProvider from "./redux/provider";
+import menuReducer from "./redux/slices/menuSlice";
 
 export {
 	HeaderTop,
@@ -15,4 +16,5 @@ export {
 	Footer,
 	MyProvider,
 	counterReducer,
+	menuReducer,
 };

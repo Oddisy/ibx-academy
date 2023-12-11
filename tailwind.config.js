@@ -12,6 +12,7 @@ module.exports = {
 			},
 			colors: {
 				footer_background_bg: "#131921",
+				body_background_bg: "#FFF",
 			},
 			animation: {
 				transition: "transition 0.7s ease",

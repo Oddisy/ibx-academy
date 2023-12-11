@@ -1,24 +1,27 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import "./header_top.css";
 import {useSelector, useDispatch} from "react-redux";
-import {increment} from "../../../redux/slices/counter_slice";
+import {toggleMenu} from "../../../redux/slices/menuSlice";
 import Link from "next/link";
 // images
 import academyName from "../../../assets/academyName.png";
 import academyLogo from "../../../assets/academyLogo.png";
 import behzadAcademy from "../../../assets/behzadAcademy.png";
 // icons
-import {FaHamburger, FaSearch} from "react-icons/fa";
-import {FaBell} from "react-icons/fa";
+import {FaBell, FaSearch} from "react-icons/fa";
 import {RxHamburgerMenu} from "react-icons/rx";
 
 const HeaderTop = () => {
-	const count = useSelector((state) => state.counter.value);
 	const dispatch = useDispatch();
+	const isOpen = useSelector((state) => state.menu.isOpen);
+	const toggleMenuHandler = () => {
+		dispatch(toggleMenu()); // Dispatch the action to toggle the menu
+	};
 	return (
 		<div className="flex flex-col md:flex-row items-center justify-between w-full h-auto md:h-[4rem] bg-emerald-700 gap-4 md:gap-12.375">
-			<div className="w-full md:w-[45%] flex items-center justify-between h-auto bg-yellow-500 sm:h-">
+			<div className="w-full md:w-[45%] flex items-center justify-between h-auto  sm:h-">
 				<Link href="">
 					<span className="flex items-center gap-1 w-[45%] md:w-auto">
 						<Image
@@ -51,8 +54,33 @@ const HeaderTop = () => {
 						<span>About us</span>
 					</Link>
 				</span>
-				<div className=" text-3xl text-black sm:block md:hidden  lg:hidden">
+				<div
+					onClick={toggleMenuHandler}
+					className="text-3xl text-black sm:block md:hidden  lg:hidden"
+				>
 					<RxHamburgerMenu />
+					{isOpen && (
+						<div>
+							<div
+								className={`menu-container flex flex-col mt-16  right-16 text-gray-900 text-[1rem] bg-white p-2 bg-opacity-100 rounded-lg w-1/4 h-1/2 absolute  ${
+									isOpen ? "show" : ""
+								}`}
+							>
+								<Link href="">
+									<span>Category</span>
+								</Link>
+								<Link href="">
+									<span>Teach</span>
+								</Link>
+								<Link href="">
+									<span>Contact us</span>
+								</Link>
+								<Link href="">
+									<span>About us</span>
+								</Link>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 			<div className="w-full md:w-[45%] flex bg-emerald-400">
