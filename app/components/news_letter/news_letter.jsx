@@ -13,11 +13,11 @@ const NewsLetter = () => {
 					<span className="text-purple-500 mx-2">Academy</span> News Letter
 				</div>
 			</div>
-			<div className="relative h-8  flex flex-col lg:w-[30%]">
+			<div className="relative h-8  flex flex-col  lg:w-[30%]">
 				<input
 					type="text"
 					placeholder="Email Address.."
-					className="pl-32  bg-gray-300 p-2 rounded-lg w-full text-sm sm:text-base"
+					className="pl-32  bg-white p-2 rounded-lg w-full text-sm sm:text-base"
 				/>
 				<Button
 					className="absolute top-[0.1rem] md:top-1 lg:top-1 right-[0.2rem] md:right-2 lg:right-2 rounded-lg text-[0.7rem] md:text-[1rem] flex items-center h-8 p-2 bg-black text-white"

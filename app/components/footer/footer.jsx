@@ -1,14 +1,13 @@
 "use client";
 import React from "react";
+import {FooterBottom, FooterMiddle, FooterTop} from "../../exports";
 
 const Footer = () => {
 	return (
-		<div className="w-94rem h-50rem  rounded-t-2.5rem">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis facere
-			provident totam laudantium iusto doloremque quaerat laboriosam vel
-			reiciendis id nesciunt pariatur officia nostrum, atque reprehenderit,
-			dolores dignissimos. In animi modi vitae architecto. Dolor accusamus optio
-			culpa quos, tenetur modi!
+		<div className="w-94rem h-50rem bg-course_bg  rounded-t-2.5rem">
+			<FooterTop />
+			<FooterMiddle />
+			<FooterBottom />
 		</div>
 	);
 };

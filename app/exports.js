@@ -2,7 +2,6 @@
 import HeaderTop from "./components/header/header_top/header_top";
 import HeaderBottom from "./components/header/header_bottom/header_bottom";
 import MainHeader from "./components/header/main_header/main_header";
-import Footer from "./components/footer/footer";
 import NavLeft from "./components/nav_bar/nav_top/nav_left/nav_left";
 import NavRight from "./components/nav_bar/nav_top/nav_right/nav_right";
 import Button from "./components/button/button";
@@ -33,6 +32,12 @@ import NewsLetter from "./components/news_letter/news_letter";
 import TopCourses from "./components/top_course/top_course";
 import TopCard from "./components/top_course/top_card/top_card";
 
+// Footer
+import Footer from "./components/footer/footer";
+import FooterBottom from "./components/footer/footer_bottom/footer_bottom";
+import FooterTop from "./components/footer/footer_top/footer_top";
+import FooterMiddle from "./components/footer/footer_middle/footer_middle";
+
 // redux
 import counterReducer from "./redux/slices/counter_slice";
 import MyProvider from "./redux/provider";
@@ -41,7 +46,6 @@ export {
 	HeaderTop,
 	HeaderBottom,
 	MainHeader,
-	Footer,
 	NavLeft,
 	NavRight,
 	UiLeft,
@@ -61,4 +65,8 @@ export {
 	NewsLetter,
 	TopCard,
 	TopCourses,
+	Footer,
+	FooterBottom,
+	FooterTop,
+	FooterMiddle,
 };

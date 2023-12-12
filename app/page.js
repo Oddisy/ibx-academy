@@ -7,6 +7,7 @@ import {
 	UiUx,
 	NewsLetter,
 	TopCourses,
+	Footer,
 } from "./exports";
 import useBooks from "./_api/all_books";
 import "./page.css";
@@ -34,6 +35,7 @@ export default function Home() {
 					<YourCourse />
 					<NewsLetter />
 					<TopCourses />
+					<Footer />
 				</div>
 			)}
 		</div>
