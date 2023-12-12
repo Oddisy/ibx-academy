@@ -39,16 +39,16 @@ const NavLeft = () => {
 			</Link>
 			<span className=" justify-around text-gray-500 gap-2 w-[55%] md:w-auto hidden sm:hidden md:hidden lg:flex">
 				<Link href="">
-					<span>Category</span>
+					<span className="hover:bg-gray-100">Category</span>
 				</Link>
 				<Link href="">
-					<span>Teach</span>
+					<span className="hover:bg-gray-100">Teach</span>
 				</Link>
 				<Link href="">
-					<span>Contact us</span>
+					<span className="hover:bg-gray-100">Contact us</span>
 				</Link>
 				<Link href="">
-					<span>About us</span>
+					<span className="hover:bg-gray-100 ">About us</span>
 				</Link>
 			</span>
 			<div

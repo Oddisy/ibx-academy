@@ -34,7 +34,7 @@ const NavRight = () => {
 						</span>
 					</div>
 				</div>
-				<span className="flex items-center justify-center h-8 w-8 rounded-md bg-gray-100 text-purple-600">
+				<span className="flex items-center justify-center h-8 w-8 rounded-md hover:bg-gray-100 bg-opacity-50 text-purple-600">
 					<FaBell />
 				</span>
 			</div>
