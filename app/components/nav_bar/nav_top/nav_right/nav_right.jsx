@@ -1,49 +1,77 @@
 "use client";
-import React, {useState, useEffect} from "react";
-
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {
+	setQuery,
+	setBooks,
+	setLoading,
+	setError,
+} from "../../../../redux/slices/book_slice";
+import useDebounce from "../../../../_api/debouce_query";
 import behzadAcademy from "../../../../assets/behzadAcademy.png";
-// icons
 import {FaBell, FaSearch} from "react-icons/fa";
 import Image from "next/image";
 import useBookSearch from "../../../../_api/search_books";
+import Link from "next/link";
 
 const NavRight = () => {
-	// logic for search query
-	const [query, setQuery] = useState("");
-	const {books, loading, error, searchBooks} = useBookSearch();
-	// const handleSearch = () => {
-	// 	searchBooks(query);
-	// };
-	useEffect(() => {
-		const delaySearch = setTimeout(() => {
-			if (query.trim() !== "") {
-				searchBooks(query);
-			}
-		}, 500); // Adjust debounce delay time (in milliseconds) as needed
+	const dispatch = useDispatch();
+	const queryState = useSelector((state) => state.books.query);
+	const bookState = useSelector((state) => state.books.books);
+	const loadingState = useSelector((state) => state.books.loading);
+	const errorState = useSelector((state) => state.books.error);
 
-		return () => clearTimeout(delaySearch);
-	}, [query, searchBooks]);
+	const {books, loading, error, searchBooks} = useBookSearch();
+	// set value from the input and set a delay time to call the api
+	const debouncedQuery = useDebounce(queryState, 500);
+
+	useEffect(() => {
+		// if a value is send to the debounce and it is not empty then call the api with seacrh hook
+		if (debouncedQuery.trim() !== "") {
+			dispatch(setLoading(loading));
+			dispatch(setBooks(books));
+			dispatch(setError(error));
+			// receives value from the debounce and search the server with the delay time
+			searchBooks(debouncedQuery);
+		}
+	}, [debouncedQuery, dispatch, searchBooks]);
+	// this is a function to update query state in redux store
+	const handleInputChange = (e) => {
+		dispatch(setQuery(e.target.value));
+	};
 
 	return (
-		<div className="w-full md:w-[45%] flex ">
-			<div className=" relative w-full md:w-1/2">
+		<div className="w-full md:w-[45%] flex">
+			<div className="relative w-full md:w-1/2">
 				<span className="relative">
 					<input
 						type="text"
-						value={query}
-						onChange={(e) => setQuery(e.target.value)}
+						// logic to set current state which is passed to the setQueryState
+						value={queryState}
+						onChange={handleInputChange}
 						placeholder="Search by name or title"
 						className="pl-4 py-2 text-gray-500 bg-gray-50 rounded-lg w-full"
 					/>
-					<FaSearch
-						// onClick={handleSearch}
-						className=" cursor-pointer absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black"
-					/>
+					<FaSearch className="cursor-pointer absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black" />
 				</span>
-				<ul className="absolute bg-black text-white w-full h-44">
-					{books.map((book) => (
-						<li key={book.id}>{book.title}</li>
-					))}
+				<ul
+					className={
+						queryState.trim() === ""
+							? "hidden"
+							: " block absolute bg-black text-gray-400 w-full h-64 text-[0.9rem] font-roboto p-2 rounded-md overflow-y-auto"
+					}
+				>
+					{queryState.trim() !== "" &&
+						bookState.map((book) => (
+							<Link href={`/book/${book.id}`} key={book.id}>
+								<li
+									className="cursor-pointer hover:bg-gray-700 w-full p-2"
+									key={book.id}
+								>
+									{book.title}
+								</li>
+							</Link>
+						))}
 				</ul>
 			</div>
 			<div className="flex justify-around w-full md:w-1/2 items-center">
