@@ -10,7 +10,7 @@ const FooterMiddle = () => {
 				<div>
 					<Image
 						src={academyCertificate}
-						className=" mt-4 w-full object-cover h-[20rem]"
+						className=" mt-4 w-full object-contain h-[20rem]"
 					/>
 				</div>
 			</div>

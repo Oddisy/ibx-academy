@@ -9,6 +9,7 @@ const BestRight = () => {
 	const {books} = useBooks();
 	// Slice the books array to display items from index 1 to 8 as pertaining to the designs
 	const slicedBooks = books.slice(9, 15);
+	// const slicedImage = topCourseImage.slice(0, 6);
 	return (
 		<div className=" w-[100%] h-full xl:w-[70%] pt-24  ">
 			<div className="w-full  mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">

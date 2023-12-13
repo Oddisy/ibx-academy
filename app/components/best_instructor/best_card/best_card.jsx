@@ -1,15 +1,18 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-
+import bestInstructor1 from "../../../assets/bestInstructor1.png";
+import bestInstructor2 from "../../../assets/bestInstructor2.png";
+import bestInstructor3 from "../../../assets/bestInstructor3.png";
+import bestInstructor4 from "../../../assets/bestInstructor4.png";
+import bestInstructor5 from "../../../assets/bestInstructor5.png";
+import bestInstructor6 from "../../../assets/bestInstructor6.png";
 const BestCard = ({
 	index,
 	imageClassName,
-	cardImage,
 	textContainerClassName,
 	bookText,
 	cardImageAlt,
-	book,
 	authur,
 }) => {
 	return (
@@ -27,7 +30,19 @@ const BestCard = ({
 				<div>
 					<Image
 						className={imageClassName}
-						src={cardImage}
+						src={
+							index === 1
+								? bestInstructor1
+								: index === 2
+								? bestInstructor2
+								: index === 3
+								? bestInstructor3
+								: index === 4
+								? bestInstructor4
+								: index === 5
+								? bestInstructor5
+								: bestInstructor6
+						}
 						alt={cardImageAlt}
 						width={300}
 						height={300}

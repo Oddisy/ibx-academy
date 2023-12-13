@@ -7,6 +7,10 @@ import {IoIosArrowForward} from "react-icons/io";
 import advanceIcon from "../../../assets/advanceIcon.png";
 import studentIcon from "../../../assets/studentIcon.png";
 import lessonIcon from "../../../assets/lessonIcon.png";
+import topCourses from "../../../assets/topCourses.png";
+import topCourses2 from "../../../assets/topCourses2.png";
+import topCourses3 from "../../../assets/topCourses3.png";
+import topCourses4 from "../../../assets/topCourses4.png";
 
 const TopCard = ({
 	index,
@@ -15,7 +19,7 @@ const TopCard = ({
 	textContainerClassName,
 	bookText,
 	cardImageAlt,
-	book,
+	bookTitle,
 	titleClassName,
 	student,
 }) => {
@@ -34,7 +38,15 @@ const TopCard = ({
 			<div>
 				<Image
 					className={imageClassName}
-					src={cardImage}
+					src={
+						index === 1
+							? topCourses
+							: index === 2
+							? topCourses2
+							: index === 3
+							? topCourses3
+							: topCourses4
+					}
 					alt={cardImageAlt}
 					width={300}
 					height={300}
@@ -42,7 +54,7 @@ const TopCard = ({
 			</div>
 			<div className={textContainerClassName}>
 				<p>{bookText}</p>
-				<div className={titleClassName}>{book.title}</div>
+				<div className={titleClassName}>{bookTitle}</div>
 				<div className=" font-bold opacity-50 mt-4 text-[0.9rem] text-black flex justify-between w-full">
 					{" "}
 					<span className="flex items-center">

@@ -7,7 +7,7 @@ import {CourseCard} from "../../exports";
 const YourCourse = () => {
 	const {books} = useBooks();
 	// Slice the books array to display items from index 1 to 8 as pertaining to the designs
-	const slicedBooks = books.slice(0, 8);
+	const slicedBooks = books.slice(16, 20);
 	return (
 		<div className=" h-[100%]  w-full pt-24 mb-8 ">
 			<div className="w-full  text-black font-bold flex   justify-between mb-4">

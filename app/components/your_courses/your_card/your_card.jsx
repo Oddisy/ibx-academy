@@ -7,6 +7,10 @@ import advanceIcon from "../../../assets/advanceIcon.png";
 import studentIcon from "../../../assets/studentIcon.png";
 import lessonIcon from "../../../assets/lessonIcon.png";
 import benx from "../../../assets/behzadAcademy.png";
+import yourCourse1 from "../../../assets/yourCourses1.png";
+import yourCourse2 from "../../../assets/yourCourses2.png";
+import yourCourse3 from "../../../assets/yourCourses3.png";
+import yourCourse4 from "../../../assets/yourCourses4.png";
 
 const CourseCard = ({
 	index,
@@ -25,7 +29,15 @@ const CourseCard = ({
 			<div className="w-full h-full">
 				<Image
 					className={imageClassName}
-					src={cardImage}
+					src={
+						index === 1
+							? yourCourse1
+							: index === 2
+							? yourCourse2
+							: index === 3
+							? yourCourse3
+							: yourCourse4
+					}
 					alt={cardImageAlt}
 					width={400}
 					height={300}

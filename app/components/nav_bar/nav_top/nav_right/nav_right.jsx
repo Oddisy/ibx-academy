@@ -14,7 +14,7 @@ const NavRight = () => {
 					<input
 						type="text"
 						placeholder="search anything"
-						className="pl-4 py-2 bg-gray-50 rounded-lg w-full"
+						className="pl-4 py-2 text-gray-500 bg-gray-50 rounded-lg w-full"
 					/>
 					<FaSearch className="absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black" />
 				</span>
