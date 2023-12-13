@@ -18,7 +18,7 @@ const NewCourses = () => {
 				</div>
 				<div className="w-full lg:w-1/2 flex justify-between text-[0.8rem] text-black ">
 					{Courses.map((item, index) => (
-						<Link href="">
+						<Link key={item.id} href="">
 							<span
 								className={
 									index === Courses.length - 1
