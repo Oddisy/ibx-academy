@@ -61,7 +61,7 @@ const DetailPage = ({params}) => {
 									className="w-4 h-4 object-contain mr-1"
 									src={studentIcon}
 								/>
-								student:{book.books.title}
+								student:{bookId}
 							</span>
 							<span className="flex items-center">
 								<Image
