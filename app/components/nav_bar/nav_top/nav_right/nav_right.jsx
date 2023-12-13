@@ -49,10 +49,10 @@ const NavRight = () => {
 						// logic to set current state which is passed to the setQueryState
 						value={queryState}
 						onChange={handleInputChange}
-						placeholder="Search by name or title"
+						placeholder="Search anything"
 						className="pl-4 py-2 text-gray-500 bg-gray-50 rounded-lg w-full"
 					/>
-					<FaSearch className="cursor-pointer absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black" />
+					<FaSearch className="cursor-pointer absolute outline-none opacity-50 -top-[1px] right-3 text:md md:text-lg lg:text-xl text-black" />
 				</span>
 				<ul
 					className={
@@ -63,7 +63,7 @@ const NavRight = () => {
 				>
 					{queryState.trim() !== "" &&
 						bookState.map((book) => (
-							<Link href={`/book/${book.id}`} key={book.id}>
+							<Link href={`/detail_page/${book.id}`} key={book.id}>
 								<li
 									className="cursor-pointer hover:bg-gray-700 w-full p-2"
 									key={book.id}

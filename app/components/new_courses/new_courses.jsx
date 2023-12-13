@@ -34,7 +34,10 @@ const NewCourses = () => {
 			</div>
 			<div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 				{slicedBooks.map((book, index) => (
-					<div className=" bg-card_background_bg border-card_border rounded-md h-28rem py-4 md:h-[25rem] lg:h-[23rem]">
+					<Link
+						href={`/detail_page/${book.id}`}
+						className=" bg-card_background_bg border-card_border rounded-md h-28rem py-4 md:h-[25rem] lg:h-[23rem]"
+					>
 						<Card
 							cardImage={book.cover_image}
 							imageClassName="w-full object-cover rounded-md  h-44"
@@ -44,7 +47,7 @@ const NewCourses = () => {
 							textContainerClassName="w-full h-full"
 							student={book.id}
 						/>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>
