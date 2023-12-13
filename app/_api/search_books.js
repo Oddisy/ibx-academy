@@ -1,31 +1,35 @@
-"use client";
-import {useEffect, useState} from "react";
+import {useState, useEffect} from "react";
 
-const useSearchBooks = () => {
+const useBookSearch = () => {
+	const apiUrl = "https://freetestapi.com/api/v1/books";
 	const [books, setBooks] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await fetch("https://freetestapi.com/api/v1/books/");
+	const searchBooks = (query) => {
+		setLoading(true);
+		setError(null);
+
+		const searchUrl = `${apiUrl}?search=${query}`;
+
+		fetch(searchUrl)
+			.then((response) => {
 				if (!response.ok) {
-					throw new Error("Failed to fetch data");
+					throw new Error("Network response was not ok.");
 				}
-				const data = await response.json();
+				return response.json();
+			})
+			.then((data) => {
 				setBooks(data);
-			} catch (error) {
-				setError(error);
-			} finally {
 				setLoading(false);
-			}
-		};
+			})
+			.catch((error) => {
+				setError(error);
+				setLoading(false);
+			});
+	};
 
-		fetchData();
-	}, []);
-
-	return {books, loading, error};
+	return {books, loading, error, searchBooks};
 };
 
-export default useSearchBooks;
+export default useBookSearch;

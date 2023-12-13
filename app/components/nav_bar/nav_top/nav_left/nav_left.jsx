@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 // images
-import {toggleMenu} from "../../../../redux/slices/menuSlice";
+import {toggleMenu} from "../../../../redux/slices/menu_slice";
 
 import academyName from "../../../../assets/academyName.png";
 import academyLogo from "../../../../assets/academyLogo.png";

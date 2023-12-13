@@ -1,23 +1,50 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import behzadAcademy from "../../../../assets/behzadAcademy.png";
 // icons
 import {FaBell, FaSearch} from "react-icons/fa";
 import Image from "next/image";
+import useBookSearch from "../../../../_api/search_books";
 
 const NavRight = () => {
+	// logic for search query
+	const [query, setQuery] = useState("");
+	const {books, loading, error, searchBooks} = useBookSearch();
+	// const handleSearch = () => {
+	// 	searchBooks(query);
+	// };
+	useEffect(() => {
+		const delaySearch = setTimeout(() => {
+			if (query.trim() !== "") {
+				searchBooks(query);
+			}
+		}, 500); // Adjust debounce delay time (in milliseconds) as needed
+
+		return () => clearTimeout(delaySearch);
+	}, [query, searchBooks]);
+
 	return (
 		<div className="w-full md:w-[45%] flex ">
-			<div className="w-full md:w-1/2">
+			<div className=" relative w-full md:w-1/2">
 				<span className="relative">
 					<input
 						type="text"
-						placeholder="search anything"
+						value={query}
+						onChange={(e) => setQuery(e.target.value)}
+						placeholder="Search by name or title"
 						className="pl-4 py-2 text-gray-500 bg-gray-50 rounded-lg w-full"
 					/>
-					<FaSearch className="absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black" />
+					<FaSearch
+						// onClick={handleSearch}
+						className=" cursor-pointer absolute outline-none opacity-50 -top-[1px] right-3 text-xl text-black"
+					/>
 				</span>
+				<ul className="absolute bg-black text-white w-full h-44">
+					{books.map((book) => (
+						<li key={book.id}>{book.title}</li>
+					))}
+				</ul>
 			</div>
 			<div className="flex justify-around w-full md:w-1/2 items-center">
 				<div className="flex gap-1 items-center">

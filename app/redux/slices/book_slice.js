@@ -1,20 +1,31 @@
+// booksSlice.js
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-	dark: false,
+	query: "",
+	books: [],
+	loading: false,
+	error: null,
 };
 
-export const counterSlice = createSlice({
-	name: "counter",
+const booksSlice = createSlice({
+	name: "books",
 	initialState,
 	reducers: {
-		changeTheme: (state, action) => {
-			state.dark = action.payload;
+		setQuery: (state, action) => {
+			state.query = action.payload;
+		},
+		setBooks: (state, action) => {
+			state.books = action.payload;
+		},
+		setLoading: (state, action) => {
+			state.loading = action.payload;
+		},
+		setError: (state, action) => {
+			state.error = action.payload;
 		},
 	},
 });
 
-// Action creators are generated for each case reducer function
-export const {increment} = counterSlice.actions;
-
-export default counterSlice.reducer;
+export const {setQuery, setBooks, setLoading, setError} = booksSlice.actions;
+export default booksSlice.reducer;
