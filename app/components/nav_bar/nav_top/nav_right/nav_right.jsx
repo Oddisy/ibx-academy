@@ -34,7 +34,7 @@ const NavRight = () => {
 			// receives value from the debounce and search the server with the delay time
 			searchBooks(debouncedQuery);
 		}
-	}, [debouncedQuery, dispatch, searchBooks]);
+	}, [debouncedQuery, dispatch, searchBooks, books, error, loading]);
 	// this is a function to update query state in redux store
 	const handleInputChange = (e) => {
 		dispatch(setQuery(e.target.value));
@@ -81,6 +81,7 @@ const NavRight = () => {
 						src={behzadAcademy}
 						width={32}
 						height={32}
+						alt="image"
 					/>
 					<div className="flex flex-col text-gray-600">
 						<span className="text-xs font-bold">Behzad Pashei</span>

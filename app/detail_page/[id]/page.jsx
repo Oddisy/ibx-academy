@@ -16,22 +16,7 @@ const DetailPage = ({params}) => {
 	const bookId = params.id;
 
 	const book = useSingleBook(bookId);
-	console.log(book);
-	{
-		/* const CourseCard = ({
-	index,
-	imageClassName,
-	cardImage,
-	textContainerClassName,
-	bookText,
-	cardImageAlt,
-	book,
-	titleClassName,
-	author,
-	student,
-}) => {
-	return */
-	}
+
 	return (
 		<div className="bg-black bg-opacity-90 h-screen flex items-center justify-center">
 			<div className=" w-[60%] h-[60%] md:h-[65%] lg:h-[44%] bg-white bg-opacity-70 rounded-2xl">
@@ -54,13 +39,15 @@ const DetailPage = ({params}) => {
 						/>
 					</div>
 					<div className="w-full flex flex-col  py-2 rounded-b-md   px-2 h-[13.3rem]">
-						<div className=" text-[0.9rem] font-bold text-black  w-full text-left">
+						<div className="w-ful text-black font-bold">{book.books.title}</div>
+						<div className=" text-[2rem] font-bold text-black   w-full text-left">
 							{book.title}
 						</div>
 						<div className=" font-bold opacity-50 mt-[2rem]  text-[0.9rem] text-black flex justify-between w-full">
 							{" "}
 							<span className="flex items-center">
 								<Image
+									alt="image"
 									className="w-4 h-4 object-contain mr-1"
 									src={lessonIcon}
 								/>
@@ -70,13 +57,15 @@ const DetailPage = ({params}) => {
 							</span>
 							<span className="flex items-center">
 								<Image
+									alt="image"
 									className="w-4 h-4 object-contain mr-1"
 									src={studentIcon}
 								/>
-								student:{book.id}
+								student:{book.books.title}
 							</span>
 							<span className="flex items-center">
 								<Image
+									alt="image"
 									className="w-4 h-4 object-contain mr-1"
 									src={advanceIcon}
 								/>
@@ -107,6 +96,7 @@ const DetailPage = ({params}) => {
 							<div className=" flex items-center justify-between mt-[1.8rem]  w-full">
 								<div className="flex gap-1 items-center">
 									<Image
+										alt="image"
 										className="w-20 h-16 object-cover"
 										src={
 											bookId % 3 === 0
@@ -119,7 +109,9 @@ const DetailPage = ({params}) => {
 										}
 									/>
 									<div className="flex flex-col text-gray-600">
-										<span className="text-xs font-bold">{book.author}</span>
+										<span className="text-xs font-bold">
+											{book.books.author}
+										</span>
 										<span className="text-sm lg:text-lg  opacity-90 tracking-tighter -mt-1">
 											{bookId % 3 === 1
 												? "Programmer"

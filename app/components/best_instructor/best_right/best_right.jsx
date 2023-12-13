@@ -14,7 +14,10 @@ const BestRight = () => {
 		<div className=" w-[100%] h-full xl:w-[70%] pt-24  ">
 			<div className="w-full  mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
 				{slicedBooks.map((book, index) => (
-					<div className=" bg-card_background_bg border-card_border rounded-md  h-[23rem]">
+					<div
+						key={book.id}
+						className="  bg-card_background_bg border-card_border rounded-md  h-[23rem]"
+					>
 						<BestCard
 							cardImage={book.cover_image}
 							imageClassName="w-full object-cover rounded-md  h-44"
@@ -23,6 +26,7 @@ const BestRight = () => {
 							titleClassName=" text-[0.9rem] font-bold text-black mt-4 w-full text-center"
 							textContainerClassName="w-full h-full"
 							authur={book.author}
+							cardImageAlt="image"
 						/>
 					</div>
 				))}

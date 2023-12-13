@@ -24,7 +24,7 @@ const UiLeft = () => {
 						arrow={<IoIosArrowForward className="ml-2" />}
 						buttonText="Start Course Now"
 					/>
-					<Image className="ml-2 w-32 h-24 object-contain" src={seventyNine} />
+					< alt="image" className="ml-2 w-32 h-24 object-contain" src={seventyNine} />
 				</div>
 			</div>
 		</div>

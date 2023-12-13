@@ -33,6 +33,7 @@ const YourCourse = () => {
 							textContainerClassName="w-full flex flex-col  py-2 rounded-b-md   px-2 h-[13.3rem]"
 							student={book.id}
 							author={book.author}
+							cardImageAlt="image"
 						/>
 					</div>
 				))}

@@ -23,10 +23,12 @@ const BestLeft = () => {
 					<Image
 						className="ml-2 w-[5rem] md:w-16 lg:w-20 xl:w-24 h-24 object-contain"
 						src={advertisingArrow}
+						alt="image"
 					/>
 					<Image
 						className="ml-2 w-[5rem] md:w-16 lg:w-20 xl:w-24  h-24 object-contain "
 						src={instructorNumber}
+						alt="image"
 					/>
 				</div>
 			</div>

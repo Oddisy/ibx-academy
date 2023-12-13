@@ -11,6 +11,7 @@ const FooterMiddle = () => {
 					<Image
 						src={academyCertificate}
 						className=" mt-4 w-full object-contain h-[20rem]"
+						alt="image"
 					/>
 				</div>
 			</div>

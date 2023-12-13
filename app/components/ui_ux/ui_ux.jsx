@@ -15,7 +15,13 @@ const UiUx = () => {
 				{/* left ui  */}
 				<UiLeft />
 				<div className="w-full lg:w-1/2">
-					<Image src={academyUi} layout="responsive" width={500} height={300} />
+					<Image
+						alt="image"
+						src={academyUi}
+						layout="responsive"
+						width={500}
+						height={300}
+					/>
 				</div>
 			</div>
 			{/* bottom ui */}

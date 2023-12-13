@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import {Button} from "../../exports";
 import {FaSearch} from "react-icons/fa";

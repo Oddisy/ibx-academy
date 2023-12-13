@@ -32,7 +32,11 @@ const UiBottom = () => {
 						Or View The Following Courses...
 					</span>
 					<div className=" ml-2 lg:ml-4 absolute right-60  sm:right-80 md:right-8 lg:right-8 mt-0 md:-mt-8 lg:-mt-8">
-						<Image className="w-12 h-12 lg:w-16 lg:h-16" src={arrowAcademy} />
+						<Image
+							className="w-12 h-12 lg:w-16 lg:h-16"
+							alt="image"
+							src={arrowAcademy}
+						/>
 					</div>
 				</div>
 			</div>

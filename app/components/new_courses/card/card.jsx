@@ -46,17 +46,29 @@ const Card = ({
 				<div className=" font-bold opacity-50 mt-4 text-[0.9rem] text-black flex justify-between w-full">
 					{" "}
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={lessonIcon} />
+						<Image
+							className="w-4 h-4 object-contain mr-1"
+							alt="image"
+							src={lessonIcon}
+						/>
 						lesson:
 						{/* logic display lesson number */}
 						{index % 3 === 1 ? "198" : index % 2 === 1 ? "98" : "50"}
 					</span>
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={studentIcon} />
+						<Image
+							className="w-4 h-4 object-contain mr-1"
+							alt="image"
+							src={studentIcon}
+						/>
 						student:{student}
 					</span>
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={advanceIcon} />
+						<Image
+							className="w-4 h-4 object-contain mr-1"
+							alt="image"
+							src={advanceIcon}
+						/>
 						{/* LOGIC TO DISPLAY STUDENT LEVEL */}
 						{index % 3 === 1
 							? "Advance"
@@ -77,6 +89,7 @@ const Card = ({
 						<Image
 							className=" w-24 h-[3.2rem]  -mr-12 object-contain"
 							src={cardIcon}
+							alt="image"
 						/>
 					</div>
 				</div>

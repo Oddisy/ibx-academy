@@ -49,17 +49,29 @@ const CourseCard = ({
 				<div className=" font-bold opacity-50 mt-[2rem]  text-[0.9rem] text-black flex justify-between w-full">
 					{" "}
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={lessonIcon} />
+						<Image
+							className="w-4 h-4 object-contain mr-1"
+							alt="image"
+							src={lessonIcon}
+						/>
 						lesson:
 						{/* logic display lesson number */}
 						{index % 3 === 1 ? "198" : index % 2 === 1 ? "98" : "50"}
 					</span>
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={studentIcon} />
+						<Image
+							alt="image"
+							className="w-4 h-4 object-contain mr-1"
+							src={studentIcon}
+						/>
 						student:{student}
 					</span>
 					<span className="flex items-center">
-						<Image className="w-4 h-4 object-contain mr-1" src={advanceIcon} />
+						<Image
+							alt="image"
+							className="w-4 h-4 object-contain mr-1"
+							src={advanceIcon}
+						/>
 						{/* LOGIC TO DISPLAY STUDENT LEVEL */}
 						{index % 3 === 1
 							? "Advance"
@@ -85,7 +97,13 @@ const CourseCard = ({
 					</div>
 					<div className=" flex items-center justify-between mt-[1.8rem]  w-full">
 						<div className="flex gap-1 items-center">
-							<Image className="w-8 h-8" src={benx} width={32} height={32} />
+							<Image
+								alt="image"
+								className="w-8 h-8"
+								src={benx}
+								width={32}
+								height={32}
+							/>
 							<div className="flex flex-col text-gray-600">
 								<span className="text-xs font-bold">{author}</span>
 								<span className="text-xs  opacity-60 tracking-tighter -mt-1">
