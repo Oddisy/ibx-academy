@@ -58,7 +58,7 @@ const NavRight = () => {
 					className={
 						queryState.trim() === ""
 							? "hidden"
-							: " block absolute bg-black text-gray-400 w-full h-64 text-[0.9rem] font-roboto p-2 rounded-md overflow-y-auto"
+							: " block absolute bg-gray-800 text-gray-300 w-full h-64 text-[0.9rem] font-roboto p-2 rounded-md overflow-y-auto"
 					}
 				>
 					{queryState.trim() !== "" &&
