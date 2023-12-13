@@ -19,7 +19,7 @@ const DetailPage = ({params}) => {
 
 	return (
 		<div className="bg-black bg-opacity-90 h-screen flex items-center justify-center">
-			<div className=" w-[60%] h-[60%] md:h-[65%] lg:h-[44%] bg-white bg-opacity-70 rounded-2xl">
+			<div className=" w-[90%] md:w-[70%] lg:w-[60%] h-[85%] md:h-[65%] lg:h-[44%] bg-white bg-opacity-70 rounded-2xl">
 				<div className=" flex  flex-col md:flex-row lg:flex-row  p-[1rem] ">
 					<div className="w-full h-full">
 						<Image
