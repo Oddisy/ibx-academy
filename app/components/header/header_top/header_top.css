@@ -5,18 +5,16 @@
 .menu-container {
 	display: none;
 	position: absolute;
-	top: 16px;
+	top: 0px;
 	right: 16px;
 	background-color: slategray;
 	border-radius: 8px;
-	min-height: 10rem;
+	min-height: 50vh;
 	opacity: 0; /* Initially hidden */
-	transform: translateY(-10px); /* Initially moved up */
 	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .menu-container.show {
 	display: flex;
 	opacity: 1;
-	transform: translateY(0);
 }

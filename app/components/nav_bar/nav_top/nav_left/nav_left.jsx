@@ -59,7 +59,7 @@ const NavLeft = () => {
 				{isOpen && (
 					<div>
 						<div
-							className={`menu-container flex flex-col mt-16  right-16 text-gray-900 text-[1rem] bg-white p-2 bg-opacity-100 rounded-lg w-1/4 h-1/2 absolute  ${
+							className={`menu-container flex flex-col mt-16  right-16 text-gray-900 text-[1rem] bg-white p-2 bg-opacity-100 rounded-lg w-1/2 h-1/2 absolute  ${
 								isOpen ? "show" : ""
 							}`}
 						>
